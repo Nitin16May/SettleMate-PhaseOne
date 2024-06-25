@@ -48,9 +48,11 @@ mongoose
 	.connect(process.env.MongoDB_URI)
 	.then(result => {
 		console.log('Database Connected!');
-		const port = process.env.PORT || 3000;
-		app.listen(port, () => console.log(`Listening on port ${port}...`));
 	})
 	.catch(err => {
 		console.log(err);
 	});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening on port ${port}...`));
+module.exports = app;
